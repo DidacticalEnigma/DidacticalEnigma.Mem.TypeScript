@@ -1,5 +1,4 @@
 import * as coreClient from "@azure/core-client";
-import * as coreAuth from "@azure/core-auth";
 import { DidacticalEnigmaMemOptionalParams } from "./models";
 
 export class DidacticalEnigmaMemContext extends coreClient.ServiceClient {
@@ -7,18 +6,10 @@ export class DidacticalEnigmaMemContext extends coreClient.ServiceClient {
 
   /**
    * Initializes a new instance of the DidacticalEnigmaMemContext class.
-   * @param credentials Subscription credentials which uniquely identify client subscription.
    * @param $host server parameter
    * @param options The parameter options
    */
-  constructor(
-    credentials: coreAuth.TokenCredential,
-    $host: string,
-    options?: DidacticalEnigmaMemOptionalParams
-  ) {
-    if (credentials === undefined) {
-      throw new Error("'credentials' cannot be null");
-    }
+  constructor($host: string, options?: DidacticalEnigmaMemOptionalParams) {
     if ($host === undefined) {
       throw new Error("'$host' cannot be null");
     }
@@ -28,8 +19,7 @@ export class DidacticalEnigmaMemContext extends coreClient.ServiceClient {
       options = {};
     }
     const defaults: DidacticalEnigmaMemOptionalParams = {
-      requestContentType: "application/json; charset=utf-8",
-      credential: credentials
+      requestContentType: "application/json; charset=utf-8"
     };
 
     const packageDetails = `azsdk-js-didactical-enigma-mem/1.0.0-beta.1`;

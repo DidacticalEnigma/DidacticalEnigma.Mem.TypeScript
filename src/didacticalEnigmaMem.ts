@@ -1,5 +1,4 @@
 import * as coreClient from "@azure/core-client";
-import * as coreAuth from "@azure/core-auth";
 import * as Parameters from "./models/parameters";
 import * as Mappers from "./models/mappers";
 import { DidacticalEnigmaMemContext } from "./didacticalEnigmaMemContext";
@@ -49,16 +48,11 @@ import {
 export class DidacticalEnigmaMem extends DidacticalEnigmaMemContext {
   /**
    * Initializes a new instance of the DidacticalEnigmaMem class.
-   * @param credentials Subscription credentials which uniquely identify client subscription.
    * @param $host server parameter
    * @param options The parameter options
    */
-  constructor(
-    credentials: coreAuth.TokenCredential,
-    $host: string,
-    options?: DidacticalEnigmaMemOptionalParams
-  ) {
-    super(credentials, $host, options);
+  constructor($host: string, options?: DidacticalEnigmaMemOptionalParams) {
+    super($host, options);
   }
 
   /** @param options The options parameters. */
