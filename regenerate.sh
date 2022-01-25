@@ -1,2 +1,2 @@
 #!/bin/bash
-npx autorest --typescript --input-file=swagger.json --output-folder=.
+npx autorest --typescript --generate-metadata=false --input-file=swagger.json --output-folder=.
