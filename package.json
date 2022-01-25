@@ -62,7 +62,7 @@
     "types/*"
   ],
   "scripts": {
-    "build": "npx npm run clean && npx tsc && npx rollup -c 2>&1 && npx npm run minify && mkdirp ./review && npm run extract-api",
+    "build": "npx npm run clean && npx -p typescript tsc && npx rollup -c 2>&1 && npx npm run minify && mkdirp ./review && npm run extract-api",
     "minify": "npx uglifyjs -c -m --comments --source-map \"content='./dist/index.js.map'\" -o ./dist/index.min.js ./dist/index.js",
     "prepack": "npx npm run build",
     "pack": "npx npm pack 2>&1",
