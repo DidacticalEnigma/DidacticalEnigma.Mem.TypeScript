@@ -30,7 +30,7 @@
     "src/**/*.ts",
     "README.md",
     "LICENSE",
-    "tsconfig.json",
+    "tsconfig.json"
   ],
   "scripts": {
     "build": "npx -p @openapitools/openapi-generator-cli openapi-generator-cli generate -i ./swagger.json -g typescript-fetch -o src --additional-properties=typescriptThreePlus=true && npx -p typescript tsc",
