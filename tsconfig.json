@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "amd",
+    "module": "es6",
     "moduleResolution": "node",
     "strict": true,
     "target": "es6",
@@ -11,8 +11,8 @@
     "forceConsistentCasingInFileNames": true,
     "lib": ["es6", "dom"],
     "declaration": true,
-    "outFile": "./dist/index.js",
-    "importHelpers": false
+    "importHelpers": false,
+    "outDir": "./dist"
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules"]

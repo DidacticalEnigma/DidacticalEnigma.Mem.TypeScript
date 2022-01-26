@@ -27,18 +27,10 @@
     "dist/**/*.js.map",
     "dist/**/*.d.ts",
     "dist/**/*.d.ts.map",
-    "dist-esm/**/*.js",
-    "dist-esm/**/*.js.map",
-    "dist-esm/**/*.d.ts",
-    "dist-esm/**/*.d.ts.map",
     "src/**/*.ts",
     "README.md",
     "LICENSE",
-    "rollup.config.js",
     "tsconfig.json",
-    "review/*",
-    "CHANGELOG.md",
-    "types/*"
   ],
   "scripts": {
     "build": "npx -p @openapitools/openapi-generator-cli openapi-generator-cli generate -i ./swagger.json -g typescript-fetch -o src --additional-properties=typescriptThreePlus=true && npx -p typescript tsc",
