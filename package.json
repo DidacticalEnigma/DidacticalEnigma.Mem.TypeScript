@@ -1,32 +1,19 @@
 {
   "name": "didactical-enigma-mem",
-  "sdk-type": "mgmt",
   "author": "milleniumbug",
-  "description": "A generated SDK for DidacticalEnigmaMem.",
+  "description": "A generated client for DidacticalEnigma.Mem.",
   "version": "1.0.0-beta.1",
-  "engines": { "node": ">=12.0.0" },
-  "dependencies": {
-    "@azure/core-client": "^1.0.0",
-    "@azure/core-rest-pipeline": "^1.1.0",
-    "tslib": "^2.2.0"
+  "engines": {
+    "node": ">=12.0.0"
   },
-  "keywords": ["node", "azure", "typescript", "browser", "isomorphic"],
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.3.3",
+    "mkdirp": "^1.0.4",
+    "typescript": "~4.2.0"
+  },
   "license": "MIT",
   "main": "./dist/index.js",
-  "module": "./dist-esm/index.js",
-  "types": "./types/didactical-enigma-mem.d.ts",
-  "devDependencies": {
-    "@microsoft/api-extractor": "^7.18.11",
-    "@rollup/plugin-commonjs": "11.0.2",
-    "@rollup/plugin-json": "^4.0.0",
-    "@rollup/plugin-multi-entry": "^3.0.0",
-    "@rollup/plugin-node-resolve": "^8.0.0",
-    "mkdirp": "^1.0.4",
-    "rollup": "^1.16.3",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "typescript": "~4.2.0",
-    "uglify-js": "^3.4.9"
-  },
+  "types": "./dist/index.d.ts",
   "homepage": "https://github.com/DidacticalEnigma/DidacticalEnigma.Mem.TypeScript",
   "repository": {
     "type": "git",
@@ -54,33 +41,10 @@
     "types/*"
   ],
   "scripts": {
-    "build": "npx npm run clean && npx -p typescript tsc && npx rollup -c 2>&1 && npx npm run minify && mkdirp ./review && npm run extract-api",
-    "minify": "npx uglifyjs -c -m --comments --source-map \"content='./dist/index.js.map'\" -o ./dist/index.min.js ./dist/index.js",
+    "build": "npx -p @openapitools/openapi-generator-cli openapi-generator-cli generate -i ./swagger.json -g typescript-fetch -o src --additional-properties=typescriptThreePlus=true && npx -p typescript tsc",
     "prepack": "npx npm run build",
     "prepare": "npx npm run build",
     "pack": "npx npm pack 2>&1",
-    "extract-api": "api-extractor run --local",
-    "lint": "echo skipped",
-    "audit": "echo skipped",
-    "clean": "npx rimraf dist dist-browser dist-esm test-dist temp types *.tgz *.log",
-    "build:node": "echo skipped",
-    "build:browser": "echo skipped",
-    "build:test": "echo skipped",
-    "build:samples": "echo skipped.",
-    "check-format": "echo skipped",
-    "execute:samples": "echo skipped",
-    "format": "echo skipped",
-    "test": "echo skipped",
-    "test:node": "echo skipped",
-    "test:browser": "echo skipped",
-    "unit-test": "echo skipped",
-    "unit-test:node": "echo skipped",
-    "unit-test:browser": "echo skipped",
-    "integration-test": "echo skipped",
-    "integration-test:node": "echo skipped",
-    "integration-test:browser": "echo skipped",
-    "docs": "echo skipped"
-  },
-  "sideEffects": false,
-  "autoPublish": true
+    "clean": "npx rimraf dist src"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
     "strict": true,
     "target": "es6",
@@ -11,7 +11,7 @@
     "forceConsistentCasingInFileNames": true,
     "lib": ["es6", "dom"],
     "declaration": true,
-    "outDir": "./dist-esm",
+    "outDir": "./dist",
     "importHelpers": false
   },
   "include": ["./src/**/*.ts"],
