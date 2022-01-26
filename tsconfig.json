@@ -12,7 +12,7 @@
     "lib": ["es6", "dom"],
     "declaration": true,
     "importHelpers": false,
-    "outDir": "./dist"
+    "outDir": "./dist-esm"
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules"]
