@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
     "strict": true,
     "target": "es6",
@@ -12,7 +12,7 @@
     "lib": ["es6", "dom"],
     "declaration": true,
     "importHelpers": false,
-    "outDir": "./dist-esm"
+    "outDir": "./dist"
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules"]

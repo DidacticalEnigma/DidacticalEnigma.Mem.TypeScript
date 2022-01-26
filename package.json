@@ -34,7 +34,7 @@
     "tsconfig.json"
   ],
   "scripts": {
-    "build": "npx -p @openapitools/openapi-generator-cli openapi-generator-cli generate -i ./swagger.json -g typescript-fetch -o src --additional-properties=typescriptThreePlus=true && npx -p typescript-bundle tsc-bundle ./tsconfig.json --outFile ./dist/index.js --exportAs commonjs",
+    "build": "npx -p @openapitools/openapi-generator-cli openapi-generator-cli generate -i ./swagger.json -g typescript-fetch -o src --additional-properties=typescriptThreePlus=true && npx -p typescript tsc",
     "prepack": "npx npm run build",
     "prepare": "npx npm run build",
     "pack": "npx npm pack 2>&1",
